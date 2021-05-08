@@ -16,7 +16,7 @@ import java.util.Locale;
 import java.util.StringTokenizer;
 
 /**
- * 火焰图
+ * 线程转储火焰图模版
  *
  * @author yibo
  * @date 2021-05-06

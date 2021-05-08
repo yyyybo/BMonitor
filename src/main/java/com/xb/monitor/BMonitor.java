@@ -43,35 +43,4 @@ public final class BMonitor {
         return MetricsHolder.timer(timerName).time();
     }
 
-    /**
-     * 创建可监控的线程池
-     *
-     * @param corePoolSize    核心线程数
-     * @param maximumPoolSize 最大线程数
-     * @param keepAliveTime   保持活跃时间
-     * @param unit            keepAliveTime的单位
-     * @param workQueue       队列
-     * @param threadFactory   线程工厂
-     * @param handler         拒绝策略
-     * @param metricName      监控名称
-     * @return 创建好的线程池
-     */
-    public static ExecutorService createInstrumentedExecutorService(int corePoolSize, int maximumPoolSize,
-                                                                    long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue, ThreadFactory threadFactory,
-                                                                    RejectedExecutionHandler handler, String metricName) {
-
-        MetricRegistry metricRegistry = MetricsHolder.getMetricRegistry();
-        InstrumentedThreadFactory instrumentedThreadFactory =
-                new InstrumentedThreadFactory(threadFactory, metricRegistry, metricName);
-
-        InstrumentedAbortPolicy instrumentedAbortPolicy =
-                new InstrumentedAbortPolicy(handler, metricRegistry, metricName);
-
-        ThreadPoolExecutor threadPoolExecutor =
-                new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
-                        instrumentedThreadFactory, instrumentedAbortPolicy);
-
-        return new InstrumentedExecutorService(threadPoolExecutor, metricRegistry, metricName);
-    }
-
 }

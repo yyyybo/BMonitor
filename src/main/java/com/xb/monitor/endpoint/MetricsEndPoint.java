@@ -14,6 +14,11 @@ import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
 @Endpoint(id = "bmonitor")
 public class MetricsEndPoint {
 
+    /**
+     * 服务暴露的监控指标
+     *
+     * @return MetricRegistry注册的所有监控指标
+     */
     @ReadOperation
     public MetricRegistry getAllMetrics() {
         return MetricsHolder.getMetricRegistry();

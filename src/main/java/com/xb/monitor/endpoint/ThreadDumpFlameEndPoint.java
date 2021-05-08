@@ -48,7 +48,7 @@ public class ThreadDumpFlameEndPoint {
     @GetMapping(path = "/flame", produces = "text/html")
     @SneakyThrows
     public void getThreadDumpFlame(HttpServletResponse response,
-    @RequestParam(name = "prefix", defaultValue = "", required = false) String prefix) {
+    @RequestParam(name = "prefix", defaultValue = StringUtils.EMPTY, required = false) String prefix) {
         final boolean locked = lock.tryLock();
         if (!locked) {
             response.getWriter().print("obtain lock failed");
@@ -98,7 +98,7 @@ public class ThreadDumpFlameEndPoint {
     @GetMapping(path = "/info", produces = "application/json")
     @ResponseBody
     @SneakyThrows
-    public BoThreadDescriptor getThreadInfo(HttpServletResponse response, @RequestParam(name = "prefix", defaultValue = "", required = false) String prefix) {
+    public BoThreadDescriptor getThreadInfo(HttpServletResponse response, @RequestParam(name = "prefix", defaultValue = StringUtils.EMPTY, required = false) String prefix) {
         final boolean locked = lock.tryLock();
         if (!locked) {
             response.getWriter().print("obtain lock failed");

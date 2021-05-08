@@ -19,7 +19,7 @@ import java.lang.management.ManagementFactory;
  * @date 2021-05-06
  */
 @Configuration
-public class EndPointAutoConfigure implements ApplicationListener<ContextRefreshedEvent> {
+public class BEndPointAutoConfigure implements ApplicationListener<ContextRefreshedEvent> {
 
     @Resource
     private ApplicationContext context;

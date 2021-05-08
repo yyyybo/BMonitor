@@ -25,7 +25,7 @@ import static com.codahale.metrics.MetricRegistry.name;
  */
 public class DruidPoolMetricSet implements MetricSet {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BufferPoolMetricSet.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DruidPoolMetricSet.class);
 
     /**
      * JMX specific attributes
