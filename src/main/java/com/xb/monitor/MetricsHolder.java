@@ -99,7 +99,10 @@ public class MetricsHolder {
         add(MetricAttribute.MEAN_RATE);
     }};
 
-    private static final Graphite GRAPHITE = new Graphite(new InetSocketAddress("test.com", 2003));
+    /**
+     * hostName: 搭建graphite的机器IP，默认端口为2003
+     */
+    private static final Graphite GRAPHITE = new Graphite(new InetSocketAddress("10.20.2.205", 2003));
 
     /**
      * 把单机数据上报

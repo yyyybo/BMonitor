@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.xb.common</groupId>
     <artifactId>BMonitor</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -13,7 +13,7 @@
         <org.slf4j.version>1.7.5</org.slf4j.version>
         <org.apache.commons.commons-lang3.version>3.1</org.apache.commons.commons-lang3.version>
 
-        <metrics.version>4.0.0</metrics.version>
+        <metrics.version>4.0.5</metrics.version>
 
         <!--注意 spring.boot内部的spring版本和org.springframework.version一致-->
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>

@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.xb.monitor.endpoint.BEndPointAutoConfigure,\
+com.xb.monitor.handler.HttpMonitorFilterConfiguration
