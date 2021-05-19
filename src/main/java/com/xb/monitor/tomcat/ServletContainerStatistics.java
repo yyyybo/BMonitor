@@ -52,6 +52,11 @@ public class ServletContainerStatistics {
         return SERVER.queryNames(new ObjectName("Tomcat:type=ThreadPool,*"), null);
     }
 
+    static Set<ObjectName> getUndertowThreadPools() throws MalformedObjectNameException {
+
+        return SERVER.queryNames(new ObjectName("*:type=Xnio,*"), null);
+    }
+
     private Object getAttribute(ObjectName name, String attribute) {
 
         try {

@@ -1,5 +1,5 @@
 # BMonitor 是一个结合grafana的埋点监控客户端
-BMonitor 是一个结合grafana的埋点监控客户端，Data Sources采用Graphite, 此客户端打包后项目直接引包即用。
+BMonitor 是一个结合grafana的埋点监控客户端，将度量数据发送给Graphite以提供图形化的监控, 此客户端打包后项目直接引包即用。
 
 # 埋点监控客户端本地部署
 * **配置文件**
