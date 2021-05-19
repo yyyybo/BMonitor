@@ -39,4 +39,9 @@ public final class BMonitorConstants {
      */
     public static final String ENABLE_MONITOR = "enableMonitor";
 
+    /**
+     * hostName: 搭建graphite的机器IP
+     */
+    public static final String GRAPHIT_HOSTNAME = "hostname";
+
 }

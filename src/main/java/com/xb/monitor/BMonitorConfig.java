@@ -23,7 +23,7 @@ public final class BMonitorConfig {
 
             rb = ResourceBundle.getBundle("bmonitor");
         } catch (Exception e) {
-            LOGGER.error("can not find bmonitor.properties config file!");
+            LOGGER.error("can not find bmonitor-jar.properties config file!");
         }
     }
 
@@ -81,6 +81,28 @@ public final class BMonitorConfig {
             return false;
         }
         return Boolean.parseBoolean(value);
+
+    }
+
+    /**
+     * 用来获取配置的graphite机器IP
+     * 来上报监控数据
+     *
+     * @return graphite机器IP
+     */
+    public static String getHostName() {
+
+        String value;
+        if (rb != null) {
+            try {
+                value = rb.getString(BMonitorConstants.GRAPHIT_HOSTNAME);
+            } catch (MissingResourceException e) {
+                return "0.0.0.1";
+            }
+        } else {
+            return "0.0.0.1";
+        }
+        return value;
 
     }
 }

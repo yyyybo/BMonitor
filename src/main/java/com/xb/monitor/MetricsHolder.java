@@ -102,7 +102,7 @@ public class MetricsHolder {
     /**
      * hostName: 搭建graphite的机器IP，默认端口为2003
      */
-    private static final Graphite GRAPHITE = new Graphite(new InetSocketAddress("10.20.2.205", 2003));
+    private static final Graphite GRAPHITE = new Graphite(new InetSocketAddress(BMonitorConfig.getHostName(), 2003));
 
     /**
      * 把单机数据上报
