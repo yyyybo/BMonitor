@@ -185,15 +185,6 @@
         </repository>
     </repositories>
 
-    <distributionManagement>
-
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>snapshots</name>
-            <url>http://nexus.corp.relxtech.com/repository/maven-snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <build>
         <plugins>
             <plugin>
